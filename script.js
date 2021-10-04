@@ -14,7 +14,7 @@ const en = `
   Thursday\n
   Friday\n
   Saturday\n
-  Sunday`
+  Sunday`;
 lang = prompt("Укажите язык");
 
 console.log("======== if =========");
@@ -39,5 +39,5 @@ switch (lang) {
 
 console.log("======== многомерный массив =========");
 
-const week = [[ru],[en]]
-console.log((lang == "ru")? week[0].toString() : week[1].toString());
+const week = [[ru], [en]];
+console.log(lang == "ru" ? week[0].toString() : week[1].toString());
