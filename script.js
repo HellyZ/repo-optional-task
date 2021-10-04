@@ -1,21 +1,24 @@
-let lang;
-const ru = `
-  Понедельник\n
-  Вторник\n
-  Среда\n
-  Четверг\n
-  Пятница\n
-  Суббота\n
-  Воскресенье\n`;
-const en = `
-  Monday\n
-  Tuesday\n
-  Wednesday\n
-  Thursday\n
-  Friday\n
-  Saturday\n
-  Sunday`
-lang = prompt("Укажите язык");
+"use strict";
+
+const ru = [
+  "Понедельник",
+  "Вторник",
+  "Среда",
+  "Четверг",
+  "Пятница",
+  "Суббота",
+  "Воскресенье",
+];
+const en = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+const lang = prompt("Укажите язык");
 
 console.log("======== if =========");
 if (lang == "ru") {
@@ -39,5 +42,5 @@ switch (lang) {
 
 console.log("======== многомерный массив =========");
 
-const week = [[ru],[en]]
-console.log((lang == "ru")? week[0].toString() : week[1].toString());
+const week = [ru, en];
+console.log(lang == "ru" ? week[0].toString() : week[1].toString());
