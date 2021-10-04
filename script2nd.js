@@ -1,3 +1,4 @@
+"use strict";
 let namePerson = prompt("Введите имя пользователя: ");
 
 namePerson.toLowerCase() == "артем" || "артём"
