@@ -1,22 +1,19 @@
 "use strict";
-const inputData = prompt("Введите строку: ");
 
-function parsString(input) {
+const inputData = prompt("Введите строку: ");
+const DEFAULT_MAX_LENGTH = 30;
+
+function parsString(input, maxLength) {
   if (typeof input === "string") {
-    let str = input.trim().trimLeft();
-    if (str.length > 30){
-      console.log(">30");
-      console.log(str.substr(0,30) + "...");
-      return str.substr(0,30) + "...";
-    } else {
-      console.log("<30");
-      console.log(str);
-      return str;
-    }
+    const str = input.trim().trimLeft();
+    const result =
+      str.length > maxLength ? `${str.substring(0, maxLength)} ...` : str;
+    console.log(result);
+    return result;
   } else {
     console.log("Вводные данные не являются строкой!");
     return null;
   }
 }
 
-parsString(inputData);
+parsString(inputData, DEFAULT_MAX_LENGTH);
