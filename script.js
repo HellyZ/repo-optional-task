@@ -5,7 +5,7 @@ const DEFAULT_MAX_LENGTH = 30;
 
 function parsString(input, maxLength) {
   if (isNaN(input)) {
-    const str = input.trim().trimLeft();
+    const str = input.trim();
     const result =
       str.length > maxLength ? `${str.substring(0, maxLength)} ...` : str;
     console.log(result);
