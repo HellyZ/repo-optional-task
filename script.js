@@ -1,23 +1,34 @@
 "use strict";
 
-const MIN = 1;
-const MAX = 100;
+const div = document.querySelector(".weekDays");
 
-function getPrimes(min, max) {
-  for (let i = min; i <= max; i++) {
-    let flag = 0;
+const week = {
+  days: [
+    "Понедельник",
+    "Вторник",
+    "Среда",
+    "Четверг",
+    "Пятница",
+    "Суббота",
+    "Воскресенье",
+  ],
+  getWeek: function () {
+    week.doCursive();
+    week.makeBoldToday();
+    div.innerHTML = week.days.join("<br/>");
+  },
 
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) {
-        flag = 1;
-        break;
-      }
-    }
-
-    if (i > 1 && flag == 0) {
-      console.log(`Делители этого числа: 1 и ${i}`);
-    }
-  }
-}
-
-console.log(getPrimes(MIN, MAX));
+  doCursive: function () {
+    week.days = week.days
+      .slice(0, -2)
+      .concat(week.days.slice(5).map((i) => `<i>${i}</i>`));
+    
+  },
+  makeBoldToday: function () {
+    const today = new Date(Date());
+    let weekday = today.getDay();
+    week.days[weekday] = `<b>${week.days[weekday]}</b>`; 
+    
+  },
+};
+week.getWeek();
