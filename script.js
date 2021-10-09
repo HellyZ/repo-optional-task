@@ -1,6 +1,6 @@
 "use strict";
 
-const div = document.querySelector(".weekDays");
+const body = document.querySelector("body");
 
 const week = {
   days: [
@@ -15,7 +15,7 @@ const week = {
   getWeek: function () {
     week.doCursive();
     week.makeBoldToday();
-    div.innerHTML = week.days.join("<br/>");
+    body.innerHTML = week.days.join("<br/>");
   },
 
   doCursive: function () {
