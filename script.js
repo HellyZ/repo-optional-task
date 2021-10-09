@@ -22,13 +22,12 @@ const week = {
     week.days = week.days
       .slice(0, -2)
       .concat(week.days.slice(5).map((i) => `<i>${i}</i>`));
-    
   },
   makeBoldToday: function () {
     const today = new Date(Date());
     let weekday = today.getDay();
-    week.days[weekday] = `<b>${week.days[weekday]}</b>`; 
-    
+    weekday--;
+    week.days[weekday] = `<b>${week.days[weekday]}</b>`;
   },
 };
 week.getWeek();
